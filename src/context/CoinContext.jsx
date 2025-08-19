@@ -25,7 +25,17 @@ const CoinContextProvider = (props) => {
       options
     )
       .then((res) => res.json())
-      .then((res) => setAllCoin(res))
+      // .then((res) => setAllCoin(res))
+      // .catch((err) => console.error(err));
+      .then((res) => {
+        console.log("API Response:", res); // Debugging ke liye
+        if (Array.isArray(res)) {
+          setAllCoin(res);
+        } else {
+          setAllCoin([]);
+          console.error("API did not return an array", res);
+        }
+      })
       .catch((err) => console.error(err));
   };
 
