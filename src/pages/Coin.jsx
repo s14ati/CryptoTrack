@@ -37,7 +37,7 @@ function Coin() {
   useEffect(() => {
     fetchCoinData();
     fetchHistoricalData();
-  }, [currency,coinId]);
+  }, [currency, coinId]);
 
   return (
     <>
@@ -55,30 +55,44 @@ function Coin() {
             <LineChart historicalData={historicalData} />
           </div>
 
-          <div className="max-w-[600px] mx-auto my-[50px] flex flex-col     ">
+          <div className="max-w-[600px] mx-auto my-[50px] flex flex-col">
             <ul className="flex justify-between px-[0px] py-[10px] list-none border-b border-[#5f5d5f]">
               <li>Crypto Market Rank</li>
               <li className="last:font-light">{coinData.market_cap_rank}</li>
             </ul>
             <ul className="flex justify-between px-[0px] py-[10px] list-none border-b border-[#5f5d5f]">
               <li>Current Price</li>
-              <li className="last:font-light">{currency.symbol} {coinData.market_data.current_price[currency.name].toLocaleString()}</li>
+              <li className="last:font-light">
+                {currency.symbol}{" "}
+                {coinData.market_data.current_price[
+                  currency.name
+                ].toLocaleString()}
+              </li>
             </ul>
             <ul className="flex justify-between px-[0px] py-[10px] list-none border-b border-[#5f5d5f]">
               <li>Market Cap</li>
-              <li className="last:font-light">{currency.symbol} {coinData.market_data.market_cap[currency.name].toLocaleString()}</li>
+              <li className="last:font-light">
+                {currency.symbol}{" "}
+                {coinData.market_data.market_cap[
+                  currency.name
+                ].toLocaleString()}
+              </li>
             </ul>
             <ul className="flex justify-between px-[0px] py-[10px] list-none border-b border-[#5f5d5f]">
               <li>24 Hour high</li>
-              <li className="last:font-light">{currency.symbol} {coinData.market_data.high_24h[currency.name].toLocaleString()}</li>
+              <li className="last:font-light">
+                {currency.symbol}{" "}
+                {coinData.market_data.high_24h[currency.name].toLocaleString()}
+              </li>
             </ul>
             <ul className="flex justify-between px-[0px] py-[10px] list-none border-b border-[#5f5d5f]">
               <li>24 Hour low</li>
-              <li className="last:font-light">{currency.symbol} {coinData.market_data.low_24h[currency.name].toLocaleString()}</li>
+              <li className="last:font-light">
+                {currency.symbol}{" "}
+                {coinData.market_data.low_24h[currency.name].toLocaleString()}
+              </li>
             </ul>
-
           </div>
-
         </div>
       ) : (
         <div className="grid place-items-center min-h-[80vh]">

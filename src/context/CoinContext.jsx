@@ -31,7 +31,6 @@ const CoinContextProvider = (props) => {
 
   useEffect(() => {
     fetchAllCoin();
-
     //jb bhi currecncy update hogi tb tb useEffect hook chal jayega
   }, [currency]);
 

@@ -13,7 +13,7 @@ function App() {
           {/* shows on every page */}
           <Navbar />
           <Outlet />
-          <Footer/>
+          <Footer />
         </>
       ),
       children: [

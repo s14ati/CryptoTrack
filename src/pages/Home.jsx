@@ -3,7 +3,6 @@ import { CoinContext } from "../context/CoinContext";
 import { Link } from "react-router-dom";
 
 function Home() {
-  <Link></Link>
   const { allCoin, currency } = useContext(CoinContext);
   const [displayCoin, setDisplayCoin] = useState([]);
   // state that store the data that will type in search box
@@ -99,7 +98,8 @@ function Home() {
 
         {/* Table Rows */}
         {displayCoin.slice(0, 15).map((itm, idx) => (
-          <Link to={`/coin/${itm.id}`}
+          <Link
+            to={`/coin/${itm.id}`}
             key={idx}
             className="grid grid-cols-[0.5fr_2fr_1fr_1fr] sm:grid-cols-[0.5fr_2fr_1fr_1fr_1.5fr] px-3 sm:px-5 py-3 sm:py-4 items-center border-b-2 border-b-[#3c3c3c] last:border-b-0 text-xs sm:text-sm md:text-base"
           >
