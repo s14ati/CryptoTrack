@@ -28,12 +28,12 @@ const CoinContextProvider = (props) => {
       // .then((res) => setAllCoin(res))
       // .catch((err) => console.error(err));
       .then((res) => {
-        console.log("API Response:", res); // Debugging ke liye
+        // console.log("API Response:", res); // Debugging ke liye
         if (Array.isArray(res)) {
           setAllCoin(res);
         } else {
           setAllCoin([]);
-          console.error("API did not return an array", res);
+          // console.error("API did not return an array", res);
         }
       })
       .catch((err) => console.error(err));
